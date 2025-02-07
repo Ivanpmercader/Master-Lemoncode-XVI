@@ -1,0 +1,66 @@
+$primary: #1c1e22;
+$secundary: #383b41;
+$auxiliar: #2392be;
+$background: #f4f6f6;
+$text-color: #f4f9f9;
+
+@mixin reset-browser{
+    
+    *, *::after, *::before{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+}
+
+@mixin flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-column-between{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@mixin flex-column-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-row-start {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+@mixin flex-center-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between-center{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-evenly-center{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@mixin round-images{
+    img{
+        width: 100%;
+        height: 100%;
+        border-radius: 5rem;
+    }
+}

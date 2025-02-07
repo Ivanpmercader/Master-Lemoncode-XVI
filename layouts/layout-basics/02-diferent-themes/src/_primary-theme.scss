@@ -1,0 +1,9 @@
+@use "sass:color";
+
+$base-color:#F91515;
+$important-color: color.adjust($base-color, $lightness: -40%);
+$warning-color: color.adjust($base-color, $lightness: 30%);
+$primary-font: Georgia, 'Times New Roman', Times, serif;
+$secundary-font: 'Trebuchet MS', 'Lucida Sans Unicode', Arial, sans-serif;
+$box-shadow: -9px 7px 5px 0px rgba(0,0,0,0.75);
+$border-radius: 3px;

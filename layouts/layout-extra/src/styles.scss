@@ -1,0 +1,154 @@
+@use "_utils.scss" as utils;
+
+@include utils.reset-browser;
+
+body{
+    max-width: 100vw;
+    min-height: 100vh;
+    @include utils.flex-column-between;
+    position: relative;
+}
+
+header {
+    .account-bar{
+        height: 3rem;
+        padding: 0 2rem;
+        background-color: utils.$auxiliar;
+        @include utils.flex-between-center;
+        .account-info{
+            height: 100%;
+            @include utils.flex-center-center;
+            .account-img{
+                width: 2rem;
+                height: 2rem;
+                margin: 0 .25rem;
+                @include utils.round-images;
+            }
+        }
+    }
+
+    .title-bar{
+        height: 4rem;
+        padding: 0 2rem;
+        color: utils.$text-color;
+        background-color: utils.$primary;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.main-container{
+    flex: 1;
+    display: flex;
+    background-color: utils.$background;
+    nav {
+        width: 12rem;
+        background-color: utils.$secundary;
+        .nav-container{
+            position: sticky;
+            top: 0;
+            .navbar-box{
+                height: 3rem;
+            }
+        
+            .navbar-title{
+                color: utils.$text-color;
+                @include utils.flex-center-center;
+            }
+        
+            .navbar-options{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: .15rem 0;
+                padding: 0 1rem;
+                background-color: utils.$auxiliar;
+                &:hover{
+                    color: utils.$text-color;
+                    background-color: utils.$primary;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    
+    main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        .cards-box{
+            @include utils.flex-center-center;
+            flex-wrap: wrap;
+            max-width: 1024px;
+            .card {
+                width: 14rem;
+                height: 12rem;
+                @include utils.flex-column-center;
+                margin: .5rem;
+                padding: 1rem;
+                border: 2px solid utils.$secundary;
+                border-radius: 1rem;
+                .card-img{
+                    width: 7rem;
+                    height: 7rem;
+                    padding: .25rem;
+                    @include utils.round-images;
+                }
+                .card-text{
+                    text-align: center;
+                }
+            }
+        }
+    }
+    
+}
+
+footer {
+    height: 4rem;
+    @include utils.flex-center-center;
+    color: utils.$text-color;
+    background-color: utils.$primary;
+}
+
+@media (max-width: 768px) {
+    header{
+        .account-bar{
+            display: none;
+        }
+    }
+    .main-container{
+        display: block;
+
+        nav {
+            width: 100%;
+            position: sticky;
+            top: 0;
+            .nav-container{
+                @include utils.flex-evenly-center;
+                .navbar-title{
+                    display: none;
+                }
+
+                .navbar-options{
+                    flex: 1;
+                    margin: .5rem .25rem;
+                }
+            }
+        }
+
+        main {
+            .cards-box{
+                width: 100%;
+                max-width: auto;
+                padding: 1rem;
+                @include utils.flex-column;
+                .card {
+                    width: 100%;
+                    height: 8rem;
+                    @include utils.flex-row-start;
+                    margin: .25rem 0;
+                }
+            }
+        }
+    }
+}

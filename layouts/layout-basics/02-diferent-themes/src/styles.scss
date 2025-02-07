@@ -1,0 +1,71 @@
+@use "_primary-theme.scss" as theme;
+// @use "_secondary-theme" as theme;
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 80vh;
+    top: 10vh;
+    left: 10vw;
+
+    .box{
+        width: 10rem;
+        height: 8rem;
+        padding: 2rem;
+        box-sizing: border-box;
+        border: 1px solid #c5c5c5;
+        font-family: theme.$primary-font;
+        border-radius: theme.$border-radius;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        transition: all .5s ease-in-out;
+
+        &:first-child{
+            background-color: theme.$base-color;
+        }
+        
+        &:nth-child(2){
+            background-color: theme.$important-color;
+            color: white;
+        }
+
+        &:nth-child(3){
+            background-color: theme.$warning-color;
+        }
+        
+        &:nth-child(4){
+            border: none;
+            padding: 0;
+            p{
+                &:nth-child(1){
+                    font-family: theme.$primary-font;
+                }
+
+                &:last-child{
+                    font-weight: bold;
+                    font-family: theme.$secundary-font;
+                }
+            }
+        }
+
+        &:last-of-type{
+            font-weight: bold;
+            box-shadow: theme.$box-shadow;
+        }
+
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+}

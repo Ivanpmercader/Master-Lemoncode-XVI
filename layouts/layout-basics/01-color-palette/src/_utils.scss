@@ -1,0 +1,21 @@
+@use 'sass:color';
+
+@function calc-percent($value){
+    @return $value*5%;
+}
+
+@mixin fill-boxes($bg-color){
+
+    @for $i from 4 to 0{
+        .darken-#{$i}{
+            background-color: color.adjust($bg-color, $lightness: calc-percent($i));
+        }
+    }
+
+    @for $i from 1 through 4{
+        .lighten-#{$i}{
+            background-color: color.adjust($bg-color, $lightness: calc-percent(-$i));
+        }
+    }
+
+}

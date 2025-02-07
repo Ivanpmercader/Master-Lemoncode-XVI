@@ -1,0 +1,30 @@
+$text-color: #43a9aa;
+$border-color: #b2feff;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.greeting{
+    font-size: 1.5rem;
+    color: $text-color
+}
+
+.img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 10rem;
+    padding: 1rem;
+    border: .25rem solid $border-color;
+    border-radius: 1rem;
+    img{
+        width: 100%;
+        object-fit: contain;
+    }
+}

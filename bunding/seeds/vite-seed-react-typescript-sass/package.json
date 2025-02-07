@@ -1,0 +1,29 @@
+{
+  "name": "vite-seed-react-typescript-sass",
+  "version": "1.0.0",
+  "main": "index.tsx",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "sass": "^1.83.4",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.11",
+    "vite-plugin-checker": "^0.8.0"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

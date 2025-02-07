@@ -1,0 +1,135 @@
+@use "_utils.scss" as utils;
+
+@include utils.reset-browser;
+
+@font-face {
+    font-family: Jost;
+    src: url("./assets/fonts/Jost-VariableFont_wght.ttf");
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    @include utils.flex-between;
+    flex-direction: column;
+    background-color:  utils.$background-color-secondary;
+    font-family: 'Jost';
+
+    header{
+        position: sticky;
+        top: 0;
+        flex: 1;
+        max-height: 8rem;
+        padding: .5rem 1rem;
+        background-color:  utils.$background-color-secondary;
+        @include utils.flex-between;
+
+        .header-logo{
+            display: flex;
+            align-items: center;
+            img {
+                height: 100%;
+            }
+            .platform-title{
+                padding: 0 2rem;
+                color: utils.$background-color-primary;
+                font-weight: bold;
+                font-size: 1.2rem;
+
+                @media screen and (width < 960px){
+                    display: none;
+                }
+            }
+        }
+
+        .header-buttons{
+            @include utils.flex-center-center;
+            padding: 1rem;
+
+            div{
+                flex-basis: 5rem;
+                padding: 1rem;
+                color: utils.$background-color-primary;
+                border-radius: .5rem;
+                text-align: center;
+                &:hover{
+                    cursor: pointer;
+                    background-color: utils.$background-color-primary;
+                    color: utils.$background-color-secondary;
+                }
+            }
+
+        }
+    }
+    main{
+        padding: 1rem;
+        .section-title{
+            color: utils.$background-color-primary;
+            #top-line-text{
+                font-weight: bold;
+                &::before{
+                    content: '5';
+                    @media screen and (width < 1280px){
+                        content: '3';
+                    }
+                }
+            }
+        }
+        section{
+            @include utils.flex-between;
+            align-items: center;
+            padding: 1rem 0;
+            flex-wrap: wrap;
+            .item{
+                flex: 1;
+                transition: all .5s ease-in-out;
+                img{
+                    width: 100%;
+                    min-width: 250px;
+                    object-fit: contain;
+                    aspect-ratio: 16/9;
+                }
+                &:hover{
+                    transform: scale(1.1);          
+                    z-index: 1;
+                    cursor: pointer;
+                    img{
+                        box-shadow: 0 0 10px 1px utils.$background-color-primary;
+                    }
+                }
+            }
+        }
+        
+        .top-line{
+            flex-direction: row-reverse;
+
+            .top-line-item{
+                flex: 1;
+                img{
+                    width: 100%;
+                    min-width: 225px;
+                    object-fit: contain;
+                }
+                @media screen and (mwidth < 1280px){
+                    &:first-child, &:nth-child(2){
+                        display: none;
+                    }
+                }
+            }
+            @media screen and (width < 960px){
+                flex-direction: column-reverse;
+            }
+        }
+    }
+    footer{
+        flex: 1;
+        @include utils.flex-center-center;
+        max-height: 30px;
+        color: utils.$background-color-primary;
+        box-shadow: 0 0 10px 1px utils.$background-color-primary;
+
+        p{
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,3 @@
+# Simple Flexbox Navbar - Vite + Typescript + Sass Project
+
+This project was built using Vite, TypeScript, and Sass, focusing on creating a simple navigation bar. It's follows a mobile-first design approach, ensuring that the layout is optimized for smaller screens first, and then progressively enhanced for larger screens. The navigation bar adjusts seamlessly across different screen sizes, using the latest CSS media query nomenclature to ensure responsiveness. The navigation bar is both user-friendly and lightweight, providing an efficient and modern solution for responsive web design.

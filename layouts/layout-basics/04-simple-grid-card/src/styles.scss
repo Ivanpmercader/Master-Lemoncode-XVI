@@ -1,0 +1,144 @@
+@use "_utils.scss" as utils;
+@use "sass:color";
+
+@include utils.reset-browser;
+
+body{
+    display: flex;
+    max-width: 100vw;
+    min-height: 100vh;
+
+    .grid-container{
+        background-color: utils.$background;
+        @include utils.grid-template;
+
+        nav{
+            grid-area: navbar;
+            background-color: utils.$primary;
+            border-right: 2px solid utils.$auxiliar;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+    
+            .navbar-options{
+                flex: 0 1 3rem;
+                @include utils.flex-center-center;
+                color: #ffffff;
+    
+                &:hover{
+                    background-color: utils.$auxiliar;
+                }    
+            }
+    
+            @media screen and (width < 768px){
+                flex-direction: unset;
+                .navbar-options{
+                    flex: 0 1 100%;
+                }
+            }
+        }
+    
+        main{
+            grid-area: main;    
+            @include utils.flex-center-center;
+            flex-wrap: wrap;
+            padding: 1rem .5rem;
+            gap: 2rem;
+    
+            @for $i from 1 through 6{
+                .card-#{$i}{
+                    border: 4px solid color.adjust(utils.$primary, $lightness: $i * 5%);
+                }
+            } 
+    
+            .card{
+                max-width: 16rem;
+                padding: 1rem;
+                border-radius: 1rem;
+                transition: ease-in-out .2s;
+                
+                img{
+                    width: 100%;
+                    box-shadow: 2px 2px 5px;
+                }
+    
+                .publication{
+                    h2{
+                        padding: .5rem 0;
+                    }
+    
+                    .published{
+                        text-align: right;
+                        padding: 1rem 0;
+                        
+                        span{
+                            color: utils.$primary;
+                        }
+                    }
+                }
+    
+                
+                .actions{
+                    
+                    button{
+                        width: 100%;
+                        min-height: 3rem;
+                        background-color: utils.$primary;
+                        color: utils.$text-color;
+                        border-radius: 10px;
+                        border-style: none;
+    
+                        &:hover{
+                            background-color: utils.$auxiliar;
+                        }
+                    }
+                }
+
+                &:hover{
+                    transform: scale(1.02);
+                }
+            }
+        }
+    
+        aside{
+            grid-area: sidebar;
+            padding: 1rem;
+            section{
+                p{
+                    text-align: justify;
+                }
+    
+                .writer{
+                    text-align: end;
+                    color:  utils.$auxiliar;
+                }
+    
+                img{
+                    width: 100%;
+                    margin: 1rem 0;
+                    border-radius: 40% 0%;
+                    box-shadow: 2px 2px 5px;
+                }
+            }
+        }
+    
+        footer{
+            grid-area: footer;
+            background-color: utils.$secondary;
+            border-top: 2px solid utils.$auxiliar;
+            @include utils.flex-center-center;
+        }
+
+        @media screen and (width < 960px){
+            @include utils.grid-template-960;
+            aside{
+                display: none;
+            }
+        }
+    
+        @media screen and (width < 768px){
+            @include utils.grid-template-768;
+        }
+    
+    }
+}

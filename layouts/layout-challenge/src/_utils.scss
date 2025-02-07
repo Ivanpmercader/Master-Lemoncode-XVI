@@ -1,0 +1,21 @@
+$background-color-primary: #ffffff;
+$background-color-secondary: #141414;
+
+@mixin reset-browser{
+    *, *::after, *::before{
+       padding: 0;
+       margin: 0;
+       box-sizing: border-box;
+   }
+}
+
+@mixin flex-between{
+   display: flex;
+   justify-content: space-between;
+}
+
+@mixin flex-center-center{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}

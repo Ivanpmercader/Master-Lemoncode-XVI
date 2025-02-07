@@ -1,0 +1,15 @@
+$text-color: #43a9aa;
+$border-color: #b2feff;
+
+.slogan {
+    font-size: 1rem;
+    color: $text-color;
+    animation: infinite 2s fadeIn;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    0% {transform: scale(1);}
+    50%{transform: scale(1.05);}
+    100% {transform: scale(1);}
+}

@@ -1,0 +1,67 @@
+@use "./_utils" as utils;
+@use 'sass:list';
+
+//SASS VARIABLES
+$text-color: #e2e2e2, #131313;
+$base-color-list: #ee2e2e, #4f6fc0, #298b71;
+
+*, *:after, *:before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    width: 100vw;
+    height: 100vh;
+    padding: 2rem;
+    
+
+    @for $i from 1 through 3 {
+        .container-#{$i}{
+            display: flex;
+            flex-wrap: wrap;
+            flex: 1;
+            gap: 1.5rem;
+            max-height: 10rem;
+
+            .box{
+                flex: 1 0 5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-width: 5rem;
+                border-radius: 1rem;
+                transition: all .5s ease-in-out;
+                box-shadow: 0 0 0.25rem 0.05rem list.nth($text-color, 2);
+
+                .color-box-text{
+                    font-weight: 800;
+                    color: list.nth($text-color, 2);
+                }
+
+                &:hover{
+                    flex: calc(5rem + 5%);
+                    transform: scale(1.1);
+                    .color-box-text{
+                        color: list.nth($text-color, 1);
+                    }
+                }
+            }
+
+            .base-color{
+                flex: 1 0 8rem;
+                background-color: list.nth($base-color-list, $i);
+            }
+
+
+            @include utils.fill-boxes(list.nth($base-color-list, $i));
+        }
+    }
+
+}

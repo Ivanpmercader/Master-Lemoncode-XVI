@@ -1,0 +1,18 @@
+$background-color: #cddaffb0;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    padding: 1rem;
+    box-sizing: border-box;
+    color: #9a50fc;
+    background-color: $background-color;
+}

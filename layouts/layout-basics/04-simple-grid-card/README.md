@@ -1,0 +1,3 @@
+# Cards & Grid layout with areas - Vite + Typescript + Sass
+
+This application is built using Vite, TypeScript, and Sass, and it showcases a responsive layout that adapts based on CSS media query breakpoints. The layout employs CSS Grid, with changes in the grid structure at different breakpoints, utilizing grid-area to display elements in various positions. The main content features multiple cards that adjust their layout and arrangement according to the device’s screen size. The use of media queries ensures that the application is optimized for various devices, offering a dynamic and fluid design that reconfigures for desktop, tablet, and mobile views. This approach allows for a highly flexible and visually appealing user experience across all screen sizes.

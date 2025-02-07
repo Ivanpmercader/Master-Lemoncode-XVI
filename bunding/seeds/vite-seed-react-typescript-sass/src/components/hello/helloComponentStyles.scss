@@ -1,0 +1,40 @@
+$brand-color: #0b37afb0;
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        
+        .title {
+            color: $brand-color;
+        }
+        
+        .img-container {
+            display: flex;
+            border: 2px solid $brand-color;
+            max-width: 50px;
+            border-radius: 10px;
+            overflow: hidden;
+            
+            img {
+                width: 100%;
+                aspect-ratio: 1/1;
+                object-fit: contain;
+            }
+        }
+    }
+    
+    main p {
+        text-align: center;
+        border-bottom: 2px solid $brand-color;
+    }
+    
+}
