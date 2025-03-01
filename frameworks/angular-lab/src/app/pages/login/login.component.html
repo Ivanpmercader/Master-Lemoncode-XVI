@@ -1,0 +1,30 @@
+<div class="container flex-justify-center">
+    <form [formGroup]="loginForm" class="login-form" (keypress.enter)="$event.preventDefault()">
+      <div class="test-container">
+        <p>Username: <em>lemoncode</em></p>
+        <p>Password: <em>master</em></p>
+      </div>
+      <mat-error *ngIf="loginForm.invalid && loginForm.errors?.['login_failed']">
+        User / password incorrect
+      </mat-error>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput name="username" [formControl]="loginUsername" placeholder="Lemoncode">
+          <mat-error *ngIf="loginUsername.invalid && loginUsername.errors?.['required']">
+            Username is required
+          </mat-error>
+          <mat-error *ngIf="loginUsername.invalid && loginUsername.errors?.['minlength']">
+            Username must have a minimum of {{loginUsername.errors?.['minlength']?.requiredLength}} characters. It have {{loginUsername.errors?.['minlength']?.actualLength}} characters.
+          </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput name="password" [formControl]="loginPassword">
+        <mat-error *ngIf="loginUsername.invalid && loginUsername.errors?.['required']">
+          Password is required
+        </mat-error>
+      </mat-form-field>
+      <button mat-flat-button color="primary" (click)="validateLogin()" [disabled]="loginForm.invalid">Login</button>
+    </form>
+  
+  </div>

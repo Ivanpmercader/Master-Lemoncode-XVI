@@ -1,0 +1,43 @@
+[
+    {
+      "id": "1",
+      "src": "/animals/adler.png",
+      "title": "adler"
+    },
+    {
+      "id": "2",
+      "src": "/animals/cat.png",
+      "title": "cat"
+    },
+    {
+      "id": "3",
+      "src": "/animals/cocker.png",
+      "title": "cocker"
+    },
+    {
+      "id": "4",
+      "src": "/animals/fox.png",
+      "title": "fox"
+    },
+    {
+      "id": "5",
+      "src": "/animals/hedgehog.png",
+      "title": "hedgehog"
+    },
+    {
+      "id": "6",
+      "src": "/animals/lamb.png",
+      "title": "lamb"
+    },
+    {
+      "id": "7",
+      "src": "/animals/lion.png",
+      "title": "lion"
+    },
+    {
+      "id": "8",
+      "src": "/animals/owl.png",
+      "title": "owl"
+    }
+  ]
+  

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import myEnvObj from "@config/config";
 import defaultImg from "@images/default-image.png";
 import "./helloComponentStyles.scss";

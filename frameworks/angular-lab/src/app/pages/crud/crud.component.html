@@ -1,0 +1,22 @@
+<div class="container">
+    <p>CRUD</p>
+    <button mat-flat-button color="primary" (click)="openDialog()">Add</button>
+    <hr/>
+    <div class="crud-container">
+      <div class="rick-morty-container" *ngFor="let character of characters">
+        <div class="img-container">
+          <img [src]="character.image" [alt]="character.name">
+        </div>
+        <div class="info-container">
+          <p>id: <span>{{character.id}}</span></p>
+          <p>name: <span>{{character.name}}</span></p>
+          <p>species: <span>{{character.species}}</span></p>
+          <p>gender: <span>{{character.gender}}</span></p>
+        </div>
+        <div class="button-container">
+          <button mat-flat-button color="primary" (click)="deleteMember(character.id)">Delete</button>
+          <button mat-flat-button color="primary" (click)="openDialog(character)">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>  

@@ -7,8 +7,14 @@
     src: url("./assets/fonts/Jost-VariableFont_wght.ttf");
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
-    width: 100%;
+    width: 100vw;
     min-height: 100vh;
     @include utils.flex-between;
     flex-direction: column;

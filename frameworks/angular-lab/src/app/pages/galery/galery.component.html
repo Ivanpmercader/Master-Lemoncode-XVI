@@ -1,0 +1,35 @@
+<div class="container flex-justify-center">
+    <div class="img-galery-container">
+      <p>Galery</p>
+      <hr/>
+      <div class="img-container selected-img" [style.width]="imgWidth" *ngIf="selectedAnimal">
+        <img rotatedirective deg="45" step="20" [src]="selectedAnimal.src" [alt]="selectedAnimal.title">
+      </div>
+      <div class="img-pages flex-justify-center">
+        <button class="" mat-flat-button color="primary" [disabled]="initPage === 0"  (click)="previousPage()"><mat-icon class="icons" aria-hidden="false" aria-label="chevron_back" fontIcon="chevron_left"></mat-icon></button>
+        <div class="list flex-justify-center">
+          <div class="img-container" *ngFor="let image of animalGalery | slice:initPage:lastPage;">
+            <img [ngClass]="{'selected': image.id === selectedAnimal.id}" [src]="image.src" [alt]="image.title" (click)="selectImg(image)">
+          </div>
+        </div>
+        <button class="" mat-flat-button color="primary" [disabled]="lastPage >= animalGalery.length"  (click)="nextPage()"><mat-icon class="icons" aria-hidden="false" aria-label="chevron_forward" fontIcon="chevron_right"></mat-icon></button>
+      </div>
+      <div class="button-container">
+        <div class="button-pair">
+          <button mat-flat-button color="warn" (click)="increaseDecreaseBaseWidth(true)">Aumentar</button>
+          <button mat-flat-button color="warn" (click)="increaseDecreaseBaseWidth(false)">Disminuir</button>
+        </div>
+        <div class="button-pair">
+          <button mat-flat-button color="primary" [disabled]="currentPosition === 0" (click)="previousImg()">Anterior</button>
+          <button mat-flat-button color="primary" [disabled]="currentPosition === animalGalery.length -1" (click)="nextImg()">Siguiente</button>
+        </div>
+        <div class="button-pair">
+          <button mat-flat-button color="warn" (click)="playGalery()">Play</button>
+          <button mat-flat-button color="warn" (click)="stopGalery()">Stop</button>
+        </div>
+      </div>
+      <hr/>
+      <p>You can rotate the image by holding shift and right clicking or by just right clicking</p>
+    </div>
+  </div>
+  

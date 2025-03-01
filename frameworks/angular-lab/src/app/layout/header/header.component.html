@@ -1,0 +1,13 @@
+<mat-toolbar class="flex-justify-center">
+    <div class="img-container">
+      <img src="vibrant-logo.png" alt="logo">
+    </div>
+    <ng-container [ngSwitch]="logged">
+      <app-public-menu *ngSwitchCase="false"></app-public-menu>
+      <app-private-menu *ngSwitchCase="true"></app-private-menu>
+    </ng-container>
+    <div class="logged-user-info" *ngIf="logged">
+      <span>Hello! {{userLogged}}</span>
+      <button mat-flat-button color="secundary" (click)="logout()">Logout</button>
+    </div>
+</mat-toolbar>  

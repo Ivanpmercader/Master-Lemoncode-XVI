@@ -1,0 +1,16 @@
+.crud-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px 20px;
+    .img-container{
+      max-width: 200px;
+      height: 200px;
+    }
+    .button-container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  

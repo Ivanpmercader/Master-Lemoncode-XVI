@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>{{update ? updateString : addString}}</h1>
+<div mat-dialog-content>
+  <form #characterForm="ngForm">
+    <mat-form-field appearance="fill" class="fullField">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="character.name" required name="name" #name="ngModel">
+      <mat-error *ngIf="name.invalid"></mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="fullField">
+      <mat-label>Species</mat-label>
+      <input matInput [(ngModel)]="character.species" required name="species" #species="ngModel">
+      <mat-error *ngIf="species.invalid"></mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="fullField">
+      <mat-label>Gender</mat-label>
+      <input matInput [(ngModel)]="character.gender" required name="gender" #gender="ngModel">
+      <mat-error *ngIf="gender.invalid"></mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="fullField">
+      <mat-label>Image</mat-label>
+      <input matInput [(ngModel)]="character.image" required name="image" #image="ngModel">
+      <mat-error *ngIf="image.invalid"></mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button color="warn" (click)="onCancel()" cdkFocusInitial>Cancel</button>
+  <button mat-flat-button color="primary" [disabled]="characterForm.invalid" [mat-dialog-close]="setDataResult()" >{{update ? 'Update' : 'Add'}}</button>
+</div>
